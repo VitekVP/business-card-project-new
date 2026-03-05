@@ -1,0 +1,36 @@
+<div class="burger-container">
+  <button class="burger-btn js-close-menu">
+    <svg class="burger-icon" width="24" height="24">
+      <use href="./images/icons.svg#icon-cross"></use>
+    </svg>
+  </button>
+  <picture>
+    <source
+      media="(max-width: 767.98px)"
+      type="png"
+      srcset="./images/logo/logo_s@1x.png 1x, ./images/logo/logo_s@2x.png 2x"
+    />
+    <img
+      class="burger-logo"
+      src="./images/logo/logo_s@1x.png"
+      alt="Logo"
+      width="60"
+      height="60"
+      loading="lazy"
+    />
+  </picture>
+  <ul class="burger-list">
+    <li>
+      <a class="burger-list-link" href="#about">Про нас</a>
+    </li>
+    <li>
+      <a class="burger-list-link" href="#products">Наша продукція</a>
+    </li>
+    <li>
+      <a class="burger-list-link" href="#gallery">Галерея</a>
+    </li>
+    <li>
+      <a class="burger-list-link" href="#contacts">Контакти</a>
+    </li>
+  </ul>
+</div>

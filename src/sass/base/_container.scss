@@ -1,0 +1,22 @@
+.container {
+  max-width: 575.99px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  // border: 1px solid red;
+
+  @media screen and (min-width: $mobile) {
+    max-width: none;
+    width: $mobile;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+    padding: 0 15px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+    padding: 0 20px;
+  }
+}

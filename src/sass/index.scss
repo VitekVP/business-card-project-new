@@ -1,2 +1,24 @@
-@import './common';
-@import './example';
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+@import './base/variables';
+@import './base/reset';
+@import './base/fonts';
+
+@import './base/container';
+@import './base/common';
+
+@import './base/mixins';
+@import './base/placeholders';
+@import './base/animations';
+
+@import './components/header';
+@import './components/burger-menu';
+@import './components/hero';
+@import './components/about';
+@import './components/choice';
+@import './components/products';
+@import './components/gallery';
+@import './components/footer';
+@import './components/scroll-up';
+@import './components/modal-assortment';
+@import './components/madal-form';

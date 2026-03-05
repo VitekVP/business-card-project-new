@@ -1,0 +1,176 @@
+.backdrop-assortment {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: $bgc-color;
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity $time-transition,
+    visibility $time-transition;
+
+  &.show-modal {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.modal-assortment {
+  position: relative;
+  z-index: 10;
+  top: 20px;
+
+  width: calc(100% - 40px * 2);
+  max-height: calc(100vh - 40px);
+
+  transform: translateY(75%) scale(0);
+
+  background-color: $tertiary-color;
+  border: 2px solid $accent-primary-color;
+  border-radius: 18px;
+
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+
+  transition:
+    opacity $time-transition,
+    visibility $time-transition,
+    transform $time-transition;
+
+  @media screen and (min-width: $tablet) {
+    width: calc(100% - 70px * 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc(100% - 110px * 2);
+  }
+}
+
+.modal-assortment-content {
+  position: relative;
+
+  height: 100%;
+  padding: 40px 30px;
+
+  overflow-y: auto;
+  @media screen and (min-width: $tablet) {
+    padding: 40px 50px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 40px 50px;
+  }
+}
+
+.backdrop-assortment.show-modal .modal-assortment {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%) scale(1);
+}
+
+.modal-assortment-close {
+  position: absolute;
+  z-index: 15;
+  top: 2px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  background: transparent;
+  color: $btn-color;
+
+  transition: color $time-transition;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $accent-primary-color;
+  }
+}
+
+.modal-assortment-icon {
+  fill: currentColor;
+}
+
+.modal-assortmrnt-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+  }
+}
+
+.assortment-list-item {
+  flex-basis: calc((100%) / 1);
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc((100% - 50px) / 2);
+
+    display: flex;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - 100px) / 3);
+  }
+}
+
+.assortment-card {
+  padding-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $secondary-color;
+
+  border-radius: 8px;
+
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+  overflow: hidden;
+}
+
+.assortment-info {
+  padding: 40px 20px 60px;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.assortment-name {
+  margin-bottom: 30px;
+
+  font-size: $font-size-thirdery;
+
+  text-align: center;
+}
+
+.assortment-text {
+  font-size: $font-size-seventh;
+}

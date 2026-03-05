@@ -1,0 +1,107 @@
+.hero {
+  @include section-padding;
+
+  position: relative;
+
+  max-width: $mobile;
+  min-height: 480px;
+  margin: 0 auto;
+
+  background-color: $tertiary-color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image:
+    linear-gradient($hero-gradient, $hero-gradient),
+    url(../images/hero/img_s@1x.jpg);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image:
+      linear-gradient($hero-gradient, $hero-gradient),
+      url(../images/hero/img_s@2x.jpg);
+  }
+  @media screen and (min-width: 577px) {
+    background-image:
+      linear-gradient($hero-gradient, $hero-gradient),
+      url(../images/hero/img_m@1x.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image:
+        linear-gradient($hero-gradient, $hero-gradient),
+        url(../images/hero/img_m@2x.jpg);
+    }
+  }
+  @media screen and (min-width: 769px) {
+    background-image:
+      linear-gradient($hero-gradient, $hero-gradient),
+      url(../images/hero/img_l@1x.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image:
+        linear-gradient($hero-gradient, $hero-gradient),
+        url(../images/hero/img_l@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+    min-height: 580px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 1600px;
+    min-height: 700px;
+  }
+}
+
+.hero-title {
+  position: absolute;
+  top: 140px;
+  left: 20%;
+
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: $font-size-eighth;
+  font-weight: $bold;
+  line-height: $secondary;
+  letter-spacing: 3;
+
+  @media screen and (min-width: $tablet) {
+    top: 180px;
+    left: 30%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    top: 200px;
+    left: 40%;
+
+    font-size: 66px;
+    letter-spacing: 5;
+    line-height: $thirdery;
+  }
+}
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-title-line-first {
+  animation: text-focus-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.hero-title-line-second {
+  margin-top: 20px;
+  margin-left: 30px;
+
+  animation: text-focus-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
+}
+
+.hero-title-accent {
+  font-weight: $bold;
+  text-transform: uppercase;
+
+  color: $tertiary-color;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}

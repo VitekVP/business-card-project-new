@@ -1,0 +1,130 @@
+.about {
+  @include section-padding;
+
+  background-color: $secondary-color;
+}
+
+.about-title {
+  @extend %section-title;
+  @include section-title;
+}
+
+.about-box {
+  margin-top: 30px;
+
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    gap: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 40px;
+
+    gap: 50px;
+  }
+}
+
+.about-img {
+  width: 100%;
+  max-width: 550px;
+  height: 260px;
+
+  border-radius: 4px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../images/about/img_s@1x.jpg);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(../images/about/img_s@2x.jpg);
+  }
+  @media screen and (min-width: 577px) {
+    background-image: url(../images/about/img_m@1x.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/about/img_m@2x.jpg);
+    }
+  }
+  @media screen and (min-width: 769px) {
+    background-image: url(../images/about/img_l@1x.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/about/img_l@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: 730px;
+    height: 348px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 1160px;
+    height: 552px;
+  }
+}
+
+.about-info-section {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 40px;
+  }
+}
+
+.about-sign {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+
+  @media screen and (min-width: $desktop) {
+    max-width: 120px;
+  }
+}
+
+.about-text {
+  max-width: 90%;
+}
+
+.about-text p {
+  text-indent: 1.5em;
+  text-align: justify;
+
+  font-size: $font-size-primary;
+
+  @media screen and (min-width: $tablet) {
+    font-size: $font-size-seventh;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: $font-size-thirdery;
+  }
+}
+
+.about-text p:not(:last-child) {
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 8px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 10px;
+  }
+}

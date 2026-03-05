@@ -1,0 +1,171 @@
+.footer {
+  @include section-padding;
+
+  background-color: $secondary-color;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  @media screen and (min-width: $desktop) {
+    justify-content: space-between;
+    gap: 50px;
+  }
+}
+
+.footer-address {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  font-size: $font-size-seventh;
+
+  @media screen and (min-width: $desktop) {
+    font-size: $font-size-thirdery;
+    font-weight: $medium;
+  }
+}
+
+.footer-address-icon {
+  fill: $primary-color;
+
+  @media screen and (min-width: $desktop) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.footer-address p {
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: $font-size-seventh;
+
+  transition:
+    text-decoration $time-transition,
+    color $time-transition,
+    transform $time-transition,
+    fill $time-transition;
+
+  &:active,
+  &:focus,
+  &:hover {
+    .footer-info-icon {
+      fill: $accent-primary-color;
+      transform: scale(1.1);
+    }
+    .footer-info-text {
+      text-decoration: underline;
+      color: $accent-primary-color;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.footer-info-text {
+  transition: all $time-transition;
+
+  @media screen and (min-width: $desktop) {
+    font-size: $font-size-thirdery;
+    font-weight: $medium;
+  }
+}
+
+.footer-info-icon {
+  fill: $primary-color;
+
+  transition: all $time-transition;
+
+  @media screen and (min-width: $desktop) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.footer-box {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.footer-btn {
+  @extend %btn-base;
+  @include btn-size;
+  @include btn-style($primary-color, $secondary-color, $accent-primary-color);
+
+  width: 260px;
+  gap: 8px;
+}
+
+.footer-btn-icon {
+  fill: currentColor;
+}
+
+.footer-messengers {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-messenger-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-color: $primary-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    .footer-messenger-icon {
+      fill: $accent-primary-color;
+    }
+  }
+}
+
+.footer-messenger-icon {
+  fill: $secondary-color;
+
+  transition: all $time-transition;
+}
+
+.footer-line {
+  margin-top: 50px;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: $primary-color;
+}
+
+.footer-upper-text {
+  margin-top: 8px;
+
+  text-align: center;
+
+  color: $fourth-color;
+}

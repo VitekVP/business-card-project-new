@@ -1,0 +1,31 @@
+<div class="backdrop-form">
+  <div class="form-wrap">
+    <button class="modal-form-close js-close-form" type="button">
+      <svg class="modal-form-icon" width="24" height="24">
+        <use href="./images/icons.svg#icon-cross"></use>
+      </svg>
+    </button>
+    <div class="form-toast"></div>
+    <h5 class="form-title">Написати повідомлення</h5>
+    <form class="form">
+      <label
+        >Ім'я<input type="text" name="name" placeholder=" " required
+      /></label>
+      <label
+        >Імейл<input type="email" name="email" placeholder=" " required
+      /></label>
+      <label
+        >Повідомлення<textarea
+          name="message"
+          rows="6"
+          placeholder=" "
+          required
+        ></textarea>
+      </label>
+      <button class="form-btn" type="submit">
+        <span class="form-btn-texp">відправити</span>
+        <span class="form-btn-loader"></span>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,264 @@
+.backdrop-form {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: $bgc-color;
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  overflow-y: auto;
+
+  transition:
+    opacity $time-transition,
+    visibility $time-transition;
+
+  &.show-modal {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.form-wrap {
+  padding: 30px 10px;
+  width: calc(100% - 20px * 2);
+  height: 680px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+
+  background: transparent;
+  border: 1px solid $accent-primary-color;
+  border-radius: 18px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%) scale(0.2);
+
+  transition:
+    transform $time-transition,
+    opacity $time-transition,
+    visibility $time-transition;
+
+  @media screen and (min-width: $mobile) {
+    width: 460px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 40px 20px;
+    width: 660px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 60px 40px;
+    width: 760px;
+    height: 740px;
+  }
+}
+
+.backdrop-form.show-modal .form-wrap {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.modal-form-close {
+  position: absolute;
+  z-index: 15;
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  background: transparent;
+  color: $accent-primary-color;
+
+  transition: color $time-transition;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.modal-form-icon {
+  fill: currentColor;
+}
+
+.form-toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%) scale(0.2);
+
+  max-width: 340px;
+  min-height: 120px;
+  padding: 10px 4px;
+
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 18px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: $tertiary-color;
+
+  font-size: $font-size-thirdery;
+  text-align: center;
+
+  opacity: 0;
+
+  transition:
+    border-color $time-transition,
+    color $time-transition,
+    transform $time-transition;
+
+  @media screen and (min-width: $mobile) {
+    max-width: none;
+    min-height: none;
+    width: 340px;
+    height: 120px;
+  }
+
+  &.success {
+    color: $btn-color;
+    border-color: $btn-color;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &.error {
+    color: $error-color;
+    border-color: $error-color;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.form-title {
+  font-size: $font-size-fourth;
+  color: $accent-primary-color;
+
+  text-align: center;
+
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  width: 100%;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: $font-size-seventh;
+  color: $accent-primary-color;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 4px 6px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: $accent-primary-color;
+  border-radius: 8px;
+  background-color: transparent;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+
+  color: $black-color;
+
+  transition:
+    border-color $time-transition,
+    background-color $time-transition,
+    box-shadow $time-transition;
+}
+
+input {
+  @media screen and (min-width: $desktop) {
+    height: 40px;
+  }
+}
+
+input:focus,
+textarea:focus {
+  border-color: $tertiary-color;
+  box-shadow:
+    13px 13px 100px #969696,
+    -13px -13px 100px #ffffff;
+  background-color: $tertiary-color;
+}
+
+input:hover,
+textarea:hover {
+  border-color: $tertiary-color;
+}
+
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+  border-color: $tertiary-color;
+  background-color: $tertiary-color;
+}
+
+.form-btn {
+  @extend %btn-base;
+  @include btn-size;
+  @include btn-style($accent-primary-color, $secondary-color, $primary-color);
+
+  margin: 0 auto;
+
+  &:disabled {
+    opacity: 0.85;
+    cursor: not-allowed;
+  }
+}
+
+.form-btn-loader {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  border-top: 4px solid $btn-color;
+  border-right: 4px solid rgb(255, 255, 255, 0.4);
+  border-bottom: 4px solid rgb(255, 255, 255, 0.4);
+  border-left: 4px solid rgb(255, 255, 255, 0.4);
+
+  display: none;
+  animation: spin 0.8s linear infinite;
+}
+
+.form-btn.loading .form-btn-texp {
+  display: none;
+}
+
+.form-btn.loading .form-btn-loader {
+  display: inline-block;
+}

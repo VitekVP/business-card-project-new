@@ -1,0 +1,52 @@
+.choice {
+  @include section-padding;
+
+  background-color: $secondary-color;
+}
+
+.choice-title {
+  @extend %section-title;
+  @include section-title;
+}
+
+.choice-list {
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.choice-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  color: $primary-color;
+
+  transition: color $time-transition;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $accent-primary-color;
+  }
+}
+
+.choice-icon {
+  fill: currentColor;
+}
+
+.choice-subtitle {
+  font-family: 'Caveat', cursive;
+  font-size: $font-size-fourth;
+  font-weight: $medium;
+
+  text-align: center;
+}

@@ -1,0 +1,28 @@
+@keyframes blick {
+  0% {
+    transform: translate(-110%, 50%) rotate(40deg);
+  }
+  20% {
+    transform: translate(110%, -50%) rotate(40deg);
+  }
+  100% {
+    transform: translate(110%, -50%) rotate(40deg);
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
