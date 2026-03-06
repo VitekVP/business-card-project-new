@@ -208,6 +208,11 @@ input {
   }
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 238, 168, 0.4);
+}
+
 input:focus,
 textarea:focus {
   border-color: $tertiary-color;
