@@ -217,6 +217,14 @@ textarea:focus {
   background-color: $tertiary-color;
 }
 
+input:focus,
+textarea:focus,
+input:not(:placeholder-shown):valid,
+textarea:not(:placeholder-shown):valid {
+  border-color: $tertiary-color;
+  background-color: $tertiary-color;
+}
+
 input:hover,
 textarea:hover {
   border-color: $tertiary-color;

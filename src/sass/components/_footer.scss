@@ -116,6 +116,10 @@
 
   width: 260px;
   gap: 8px;
+
+  @media screen and (min-width: $tablet) {
+    width: 240px;
+  }
 }
 
 .footer-btn-icon {
@@ -124,7 +128,7 @@
 
 .footer-messengers {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .footer-messenger-item {
