@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 
   // scrollbar-width: thin;
-  // scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.05);
+  // scrollbar-color: $accent-primary-color $btn-color;
 }
 
 ::-webkit-scrollbar {
@@ -10,7 +10,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(85, 107, 47, 0.1);
+  background: $btn-color-accent;
 }
 
 ::-webkit-scrollbar-thumb {
